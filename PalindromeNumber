@@ -1,0 +1,28 @@
+class Solution {
+public:
+    bool isPalindrome(int x)
+    {
+        long int result=0;
+        int prev=0;
+        int temp=x;
+        if(x<0 || x>= 2147483647){
+            return false;
+        }
+        else if(x>0){
+            while(x>0)
+            {
+                int cur=x%10;
+                x=x/10;
+                result=result*10+cur;
+                if(result>2147483647){
+                    return false;
+                }
+            }            
+            return (temp==result);
+        }
+        else if(x==0){
+            return true;
+        }
+        return -1;
+    }
+};
